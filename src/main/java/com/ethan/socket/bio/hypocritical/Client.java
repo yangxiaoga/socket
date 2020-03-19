@@ -12,6 +12,7 @@ import java.net.UnknownHostException;
  * Client
  */
 public class Client {
+	
 	final static String SERVER_ADDR = "192.168.1.2";
 	final static int SERVER_PORT = 8765;
 	
@@ -59,7 +60,5 @@ public class Client {
 				}
 			}
 		}
-		
-		
 	}
 }

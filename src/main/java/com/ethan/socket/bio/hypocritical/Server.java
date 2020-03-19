@@ -24,12 +24,15 @@ public class Server {
 			server = new ServerSocket(SERVER_PORT);
 			System.out.println("Server start..");
 			
-			//进行阻塞
-			Socket socket = server.accept();
-			System.out.println("server socket: "+socket.hashCode());
-			
-			//提交到线程池中
-			pool.submit(new Task(socket));
+			while(true) {
+				//进行阻塞
+				Socket socket = server.accept();
+				System.out.println("server socket: "+socket.hashCode());
+				
+				//提交到线程池中
+				pool.submit(new Task(socket));
+			}
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
